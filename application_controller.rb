@@ -7,4 +7,14 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
+  post '/' do
+  	@phone_number = params[:phone_number]
+  	@message = params[:message]
+  	@times = params[:times]
+  end
+
+  get '/result' do
+  	erb :result
+  end
+
 end
