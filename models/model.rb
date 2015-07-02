@@ -8,6 +8,6 @@ auth_token = 'dade8c6c18cad71adc0947977dd5edf7'
 
  @client.account.messages.create({
 	:from => '+17862920603',  
-	:to => '+13052818195',
-	:body => "Hey buddy!"
+	:to => @phone_number,
+	:body => @message
 })
