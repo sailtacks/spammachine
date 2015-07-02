@@ -18,8 +18,8 @@ class MyApp < Sinatra::Base
     send_spam(@phone_number, @message, @times)
   end
 
-  get '/result' do
-  	erb :result
+  get '/' do
+  	erb :index
   end
 
 end
