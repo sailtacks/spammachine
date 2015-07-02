@@ -1,5 +1,8 @@
+require 'Sinatra'
 require 'bundler'
 Bundler.require
+require 'twilio-ruby'
+require_relative 'models/model.rb'
 
 class MyApp < Sinatra::Base
 
@@ -11,6 +14,8 @@ class MyApp < Sinatra::Base
   	@phone_number = params[:phone_number]
   	@message = params[:message]
   	@times = params[:times]
+
+    send_spam(@phone_number, @message, @times)
   end
 
   get '/result' do
